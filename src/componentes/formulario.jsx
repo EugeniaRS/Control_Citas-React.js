@@ -37,7 +37,7 @@ const Formulario = () => {
           htmlFor="email"
           className="block uppercase font-bold text-gray-700 "
         >
-          Correo Electronico
+          Correo Electronico prubea github
         </label>
        
         <input
