@@ -15,9 +15,18 @@ function Formulario({ pacientes, setPacientes, paciente ,setPaciente}) {
     return random + fecha;
   }
 
-  useEffect(()=> {
-   console.log(paciente)
-  },[paciente])
+  useEffect(()=>{
+    if(Object.keys(paciente).length > 0)
+    {
+      setMascota(paciente.mascota)
+      setPropietario(paciente.propietario)
+      setEmail(paciente.email)
+      setAlta(paciente.alta)
+      setSintomas(paciente.sintomas)
+    }
+    console.log('Nuevo paciente')
+ },[paciente])
+
 
   const validacionFormulario = (e) => {
     e.preventDefault();
@@ -152,7 +161,7 @@ if(paciente.id){
         <input
           type="submit"
           className="bg-indigo-500 text-white font-bold uppercase hover:bg-indigo-700 cursor-pointer transition-colors p-2 rounded-md"
-          value={paciente.id ?'Editar paciente':'Agregar Paciente'}
+          value={paciente.id ? 'Editar paciente' : 'Agregar Paciente'}
         />
       </form>
     </div>
